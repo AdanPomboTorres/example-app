@@ -32,3 +32,7 @@ Route::get('/pruebas', [pruebas::class, 'hacerPruebas']);
 Route::get('/otra_prueba', [OtraPruebaController::class, 'prueba2']);
 Route::get('/users/{user_id}', [UsuariosController::class, 'findUserById']);
 Route::get('/productos', [ProductosController::class, 'todosLosProductos']);
+
+Route::get('/productos/new/', [ProductosController::class, 'insertarProductos']);
+
+
