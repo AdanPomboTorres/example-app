@@ -21,6 +21,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/formulario', function () {
+    return view('formulario');
+});
+
 Route::get('/mostrar-vista', function () {
     return view('vista');
 });
@@ -32,7 +36,8 @@ Route::get('/pruebas', [pruebas::class, 'hacerPruebas']);
 Route::get('/otra_prueba', [OtraPruebaController::class, 'prueba2']);
 Route::get('/users/{user_id}', [UsuariosController::class, 'findUserById']);
 Route::get('/productos', [ProductosController::class, 'todosLosProductos']);
-
 Route::get('/productos/new/', [ProductosController::class, 'insertarProductos']);
 
-
+Route::get('/filtrado', function () {
+    return view('filtroFormulario');
+});

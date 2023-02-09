@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\formulario;
 use App\Http\Controllers\ProductosController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -19,6 +20,10 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('/productos/', [ProductosController::class, 'todosLosProductos']);
+// Route::get('/productos/', [ProductosController::class, 'todosLosProductos']);
 // Route::post('/productos/new/', [ProductosController::class, 'formularioNuevoProducto']);
-Route::post('/productos/new/', [ProductosController::class, 'insertarProducto']);
+// Route::post('/formulario/', [formulario::class, 'mostrarVista']);
+
+
+Route::post('/productos', [ProductosController::class, 'insertarProducto']);
+Route::get('/filtrado', [ProductosController::class, 'filtrarFormulario']);
